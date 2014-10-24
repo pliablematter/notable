@@ -135,6 +135,10 @@ Notable will only display one notification at a time. The first one that evaluat
 #### How does Notable store data?
 Notable stores its state using the NSUserDefaults system. If a user delete / reinstalls the app, the state will be lost.
 
+## License
+
+Notable is offered under the [MIT License](https://github.com/pliablematter/notable/blob/master/LICENSE)
+
 
 
 
