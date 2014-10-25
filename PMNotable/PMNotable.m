@@ -54,7 +54,7 @@
         
         if ([notification conditionsSatisfied])
         {
-            NSLog(@"show");
+            NSLog(@"show %@", notification.entry);
         }
         else
         {

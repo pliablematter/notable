@@ -1,6 +1,6 @@
 //
 //  PMNotableNotification.m
-//  PMNotableDevelopment
+//  PMNotable
 //
 //  Created by Igor Milakovic on 25/10/14.
 //  Copyright (c) 2014 Pliable Matter LLC. All rights reserved.
@@ -9,6 +9,7 @@
 #import "PMNotableNotification.h"
 
 #import "PMNotableNotificationCondition.h"
+#import "PMNotableNotificationViewDefinition.h"
 
 @implementation PMNotableNotification
 
@@ -20,9 +21,10 @@
     if (self)
     {
         _notificationID = @"";
-        
         _allConditions = [NSMutableArray new];
         _anyConditions = [NSMutableArray new];
+        _entry = @"";
+        _viewDefinitions = [NSMutableArray new];
     }
     return self;
 }
@@ -91,6 +93,26 @@
             }
         }
     }
+    
+    // Entry
+    if ([JSONObject objectForKey:@"entry"])
+    {
+        self.entry = [JSONObject objectForKey:@"entry"];
+    }
+    
+    // Views
+    if ([JSONObject objectForKey:@"views"])
+    {
+        NSDictionary *views = [JSONObject objectForKey:@"views"];
+        
+        for (NSString *key in views.allKeys)
+        {
+            PMNotableNotificationViewDefinition *viewDefinition = [PMNotableNotificationViewDefinition new];
+            viewDefinition.viewID = key;
+            [viewDefinition parseJSONObject:[views objectForKey:key]];
+            [_viewDefinitions addObject:viewDefinition];
+        }
+    }
 }
 
 #pragma mark - Memory management
@@ -98,9 +120,10 @@
 - (void)dealloc
 {
     _notificationID = nil;
-    
     _allConditions = nil;
     _anyConditions = nil;
+    _entry = nil;
+    _viewDefinitions = nil;
 }
 
 @end
