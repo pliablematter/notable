@@ -16,6 +16,9 @@
 		5B3DB38219FB8A080076FFD2 /* PMNotableDevelopmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DB38119FB8A080076FFD2 /* PMNotableDevelopmentTests.m */; };
 		5B3DB38E19FB8A850076FFD2 /* PMNotable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DB38D19FB8A850076FFD2 /* PMNotable.m */; };
 		5B4E67F819FBB09000931A83 /* PMNotableDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E67F719FBB09000931A83 /* PMNotableDownloader.m */; };
+		5B4E67FB19FBB99C00931A83 /* PMNotableNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E67FA19FBB99C00931A83 /* PMNotableNotification.m */; };
+		5B4E67FE19FBC01500931A83 /* PMNotableNotificationCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E67FD19FBC01500931A83 /* PMNotableNotificationCondition.m */; };
+		5B4E680119FBC6AB00931A83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E680019FBC6AB00931A83 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,12 @@
 		5B3DB38D19FB8A850076FFD2 /* PMNotable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotable.m; sourceTree = "<group>"; };
 		5B4E67F619FBB09000931A83 /* PMNotableDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableDownloader.h; sourceTree = "<group>"; };
 		5B4E67F719FBB09000931A83 /* PMNotableDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableDownloader.m; sourceTree = "<group>"; };
+		5B4E67F919FBB99C00931A83 /* PMNotableNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotification.h; sourceTree = "<group>"; };
+		5B4E67FA19FBB99C00931A83 /* PMNotableNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotification.m; sourceTree = "<group>"; };
+		5B4E67FC19FBC01500931A83 /* PMNotableNotificationCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotificationCondition.h; sourceTree = "<group>"; };
+		5B4E67FD19FBC01500931A83 /* PMNotableNotificationCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotificationCondition.m; sourceTree = "<group>"; };
+		5B4E67FF19FBC6AB00931A83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		5B4E680019FBC6AB00931A83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +142,12 @@
 				5B3DB38D19FB8A850076FFD2 /* PMNotable.m */,
 				5B4E67F619FBB09000931A83 /* PMNotableDownloader.h */,
 				5B4E67F719FBB09000931A83 /* PMNotableDownloader.m */,
+				5B4E67F919FBB99C00931A83 /* PMNotableNotification.h */,
+				5B4E67FA19FBB99C00931A83 /* PMNotableNotification.m */,
+				5B4E67FC19FBC01500931A83 /* PMNotableNotificationCondition.h */,
+				5B4E67FD19FBC01500931A83 /* PMNotableNotificationCondition.m */,
+				5B4E67FF19FBC6AB00931A83 /* Reachability.h */,
+				5B4E680019FBC6AB00931A83 /* Reachability.m */,
 			);
 			name = PMNotable;
 			path = ../PMNotable;
@@ -239,9 +254,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B4E67F819FBB09000931A83 /* PMNotableDownloader.m in Sources */,
+				5B4E67FB19FBB99C00931A83 /* PMNotableNotification.m in Sources */,
+				5B4E680119FBC6AB00931A83 /* Reachability.m in Sources */,
 				5B3DB38E19FB8A850076FFD2 /* PMNotable.m in Sources */,
 				5B3DB36E19FB8A080076FFD2 /* ViewController.m in Sources */,
 				5B3DB36B19FB8A080076FFD2 /* AppDelegate.m in Sources */,
+				5B4E67FE19FBC01500931A83 /* PMNotableNotificationCondition.m in Sources */,
 				5B3DB36819FB8A080076FFD2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

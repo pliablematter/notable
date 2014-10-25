@@ -9,6 +9,7 @@
 #import "PMNotable.h"
 
 #import "PMNotableDownloader.h"
+#import "PMNotableNotification.h"
 
 @implementation PMNotable
 
@@ -35,12 +36,31 @@
     
     [downloader requestControlFile:controlFile successBlock:^(id controlJSON)
     {
-        NSLog(@"%@", controlJSON);
+        [self parseControlJSON:controlJSON];
     }
     errorBlock:^(NSError *error)
     {
         NSLog(@"%@", error);
     }];
+}
+
+- (void)parseControlJSON:(id)controlJSON
+{
+    for (NSString *key in [controlJSON allKeys])
+    {
+        PMNotableNotification *notification = [PMNotableNotification new];
+        notification.notificationID = key;
+        [notification parseJSONObject:[controlJSON objectForKey:key]];
+        
+        if ([notification conditionsSatisfied])
+        {
+            NSLog(@"show");
+        }
+        else
+        {
+            NSLog(@"don't show");
+        }
+    }
 }
 
 @end
