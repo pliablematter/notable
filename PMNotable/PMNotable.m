@@ -8,8 +8,10 @@
 
 #import "PMNotable.h"
 
+#import "AppDelegate.h"
 #import "PMNotableDownloader.h"
 #import "PMNotableNotification.h"
+#import "PMNotableNotificationView.h"
 
 @implementation PMNotable
 
@@ -54,11 +56,22 @@
         
         if ([notification conditionsSatisfied])
         {
-            NSLog(@"show %@", notification.entry);
+            PMNotableNotificationViewDefinition *viewDefinition = [notification viewDefinitionForEntry];
+            
+            if (viewDefinition)
+            {
+                NSLog(@"showing '%@'", notification.entry);
+                AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+                
+                PMNotableNotificationView *view = [[PMNotableNotificationView alloc] initWithViewDefinition:viewDefinition];
+                [appDelegate.window addSubview:view];
+                
+                break;
+            }
         }
         else
         {
-            NSLog(@"don't show");
+            NSLog(@"not showing '%@'", notification.notificationID);
         }
     }
 }

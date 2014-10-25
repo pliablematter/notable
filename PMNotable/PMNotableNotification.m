@@ -8,9 +8,6 @@
 
 #import "PMNotableNotification.h"
 
-#import "PMNotableNotificationCondition.h"
-#import "PMNotableNotificationViewDefinition.h"
-
 @implementation PMNotableNotification
 
 #pragma mark - Init
@@ -113,6 +110,19 @@
             [_viewDefinitions addObject:viewDefinition];
         }
     }
+}
+
+- (PMNotableNotificationViewDefinition *)viewDefinitionForEntry
+{
+    for (PMNotableNotificationViewDefinition *viewDefinition in _viewDefinitions)
+    {
+        if ([viewDefinition.viewID isEqualToString:self.entry])
+        {
+            return viewDefinition;
+        }
+    }
+    
+    return nil;
 }
 
 #pragma mark - Memory management

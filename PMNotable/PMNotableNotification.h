@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "PMNotableNotificationCondition.h"
+#import "PMNotableNotificationViewDefinition.h"
+
 @interface PMNotableNotification : NSObject
 
 @property (strong, nonatomic) NSString *notificationID;
@@ -18,5 +21,6 @@
 
 - (BOOL)conditionsSatisfied;
 - (void)parseJSONObject:(id)JSONObject;
+- (PMNotableNotificationViewDefinition *)viewDefinitionForEntry;
 
 @end

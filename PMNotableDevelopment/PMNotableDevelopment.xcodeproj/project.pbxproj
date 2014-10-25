@@ -20,6 +20,7 @@
 		5B4E67FE19FBC01500931A83 /* PMNotableNotificationCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E67FD19FBC01500931A83 /* PMNotableNotificationCondition.m */; };
 		5B4E680119FBC6AB00931A83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E680019FBC6AB00931A83 /* Reachability.m */; };
 		5B4E680419FBFF8D00931A83 /* PMNotableNotificationViewDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E680319FBFF8D00931A83 /* PMNotableNotificationViewDefinition.m */; };
+		5B4E680719FC0F0800931A83 /* PMNotableNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E680619FC0F0800931A83 /* PMNotableNotificationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		5B4E680019FBC6AB00931A83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		5B4E680219FBFF8D00931A83 /* PMNotableNotificationViewDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotificationViewDefinition.h; sourceTree = "<group>"; };
 		5B4E680319FBFF8D00931A83 /* PMNotableNotificationViewDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotificationViewDefinition.m; sourceTree = "<group>"; };
+		5B4E680519FC0F0800931A83 /* PMNotableNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotificationView.h; sourceTree = "<group>"; };
+		5B4E680619FC0F0800931A83 /* PMNotableNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotificationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 				5B4E67FA19FBB99C00931A83 /* PMNotableNotification.m */,
 				5B4E67FC19FBC01500931A83 /* PMNotableNotificationCondition.h */,
 				5B4E67FD19FBC01500931A83 /* PMNotableNotificationCondition.m */,
+				5B4E680519FC0F0800931A83 /* PMNotableNotificationView.h */,
+				5B4E680619FC0F0800931A83 /* PMNotableNotificationView.m */,
 				5B4E680219FBFF8D00931A83 /* PMNotableNotificationViewDefinition.h */,
 				5B4E680319FBFF8D00931A83 /* PMNotableNotificationViewDefinition.m */,
 				5B4E67FF19FBC6AB00931A83 /* Reachability.h */,
@@ -262,6 +267,7 @@
 				5B4E67F819FBB09000931A83 /* PMNotableDownloader.m in Sources */,
 				5B4E67FB19FBB99C00931A83 /* PMNotableNotification.m in Sources */,
 				5B4E680119FBC6AB00931A83 /* Reachability.m in Sources */,
+				5B4E680719FC0F0800931A83 /* PMNotableNotificationView.m in Sources */,
 				5B3DB38E19FB8A850076FFD2 /* PMNotable.m in Sources */,
 				5B3DB36E19FB8A080076FFD2 /* ViewController.m in Sources */,
 				5B3DB36B19FB8A080076FFD2 /* AppDelegate.m in Sources */,
