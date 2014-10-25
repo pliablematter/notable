@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface PMNotable : NSObject
+{
+    NSMutableArray *_notifications;
+}
 
 // Singleton
 + (instancetype)sharedInstance;

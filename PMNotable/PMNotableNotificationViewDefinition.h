@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, PMViewOrigin)
 
 @interface PMNotableNotificationViewDefinition : NSObject
 
+@property (strong, nonatomic) NSString *notificationID;
 @property (strong, nonatomic) NSString *viewID;
 @property (strong, nonatomic) NSString *file;
 @property (assign, nonatomic) CGFloat height;

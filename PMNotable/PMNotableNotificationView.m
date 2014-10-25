@@ -39,42 +39,38 @@
 
 #pragma mark - Public
 
-- (void)hideAnimated:(BOOL)animated
+- (void)hideAnimated:(BOOL)animated completionBlock:(void (^)())completionBlock
 {
-    if (animated)
+    [UIView animateWithDuration:animated ? 0.5 : 0.0 animations:^
     {
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationBeginsFromCurrentState:YES];
-        [UIView setAnimationDuration:0.5];
+        CGRect frame = self.frame;
+        frame.origin.y = self.viewDefinition.origin == PMViewOriginBottom ? [UIScreen mainScreen].bounds.size.height : -self.frame.size.height;
+        self.frame = frame;
     }
-    
-    CGRect frame = self.frame;
-    frame.origin.y = self.viewDefinition.origin == PMViewOriginBottom ? [UIScreen mainScreen].bounds.size.height : -self.frame.size.height;
-    self.frame = frame;
-    
-    if (animated)
+    completion:^(BOOL finished)
     {
-        [UIView commitAnimations];
-    }
+        if (completionBlock)
+        {
+            completionBlock();
+        }
+    }];
 }
 
-- (void)showAnimated:(BOOL)animated
+- (void)showAnimated:(BOOL)animated completionBlock:(void (^)())completionBlock
 {
-    if (animated)
+    [UIView animateWithDuration:animated ? 0.5 : 0.0 animations:^
     {
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationBeginsFromCurrentState:YES];
-        [UIView setAnimationDuration:0.5];
+        CGRect frame = self.frame;
+        frame.origin.y = self.viewDefinition.origin == PMViewOriginBottom ? [UIScreen mainScreen].bounds.size.height - self.frame.size.height : 0.0;
+        self.frame = frame;
     }
-    
-    CGRect frame = self.frame;
-    frame.origin.y = self.viewDefinition.origin == PMViewOriginBottom ? [UIScreen mainScreen].bounds.size.height - self.frame.size.height : 0.0;
-    self.frame = frame;
-    
-    if (animated)
+    completion:^(BOOL finished)
     {
-        [UIView commitAnimations];
-    }
+        if (completionBlock)
+        {
+            completionBlock();
+        }
+    }];
 }
 
 #pragma mark - Layout
@@ -90,19 +86,33 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [self showAnimated:YES];
+    [self showAnimated:YES completionBlock:nil];
     
     JSContext *context =  [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    context[@"onclick"] = ^(JSValue *parameter)
+    
+    context[@"dismiss"] = ^
     {
-        [self buttonTapped:parameter];
+        if (_delegate && [_delegate respondsToSelector:@selector(notificationViewShouldDismiss:)])
+        {
+            [_delegate notificationViewShouldDismiss:self];
+        }
     };
-}
-
-- (void)buttonTapped:(JSValue *)parameter
-{
-    NSLog(@"%@", parameter);
-    [self hideAnimated:YES];
+    
+    context[@"display"] = ^(NSString *viewID)
+    {
+        if (_delegate && [_delegate respondsToSelector:@selector(notificationView:shouldDisplayViewWithID:)])
+        {
+            [_delegate notificationView:self shouldDisplayViewWithID:viewID];
+        }
+    };
+    
+    context[@"openUrl"] = ^(NSString *urlString)
+    {
+        if (_delegate && [_delegate respondsToSelector:@selector(notificationView:shouldOpenURL:)])
+        {
+            [_delegate notificationView:self shouldOpenURL:[NSURL URLWithString:urlString]];
+        }
+    };
 }
 
 @end

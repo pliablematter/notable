@@ -105,6 +105,7 @@
         for (NSString *key in views.allKeys)
         {
             PMNotableNotificationViewDefinition *viewDefinition = [PMNotableNotificationViewDefinition new];
+            viewDefinition.notificationID = _notificationID;
             viewDefinition.viewID = key;
             [viewDefinition parseJSONObject:[views objectForKey:key]];
             [_viewDefinitions addObject:viewDefinition];
@@ -112,11 +113,11 @@
     }
 }
 
-- (PMNotableNotificationViewDefinition *)viewDefinitionForEntry
+- (PMNotableNotificationViewDefinition *)viewDefinitionWithID:(NSString *)viewID
 {
     for (PMNotableNotificationViewDefinition *viewDefinition in _viewDefinitions)
     {
-        if ([viewDefinition.viewID isEqualToString:self.entry])
+        if ([viewDefinition.viewID isEqualToString:viewID])
         {
             return viewDefinition;
         }

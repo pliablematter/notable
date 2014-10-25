@@ -21,6 +21,6 @@
 
 - (BOOL)conditionsSatisfied;
 - (void)parseJSONObject:(id)JSONObject;
-- (PMNotableNotificationViewDefinition *)viewDefinitionForEntry;
+- (PMNotableNotificationViewDefinition *)viewDefinitionWithID:(NSString *)viewID;
 
 @end

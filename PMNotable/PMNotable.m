@@ -13,6 +13,13 @@
 #import "PMNotableNotification.h"
 #import "PMNotableNotificationView.h"
 
+@interface PMNotable () <PMNotableNotificationViewDelegate>
+{
+    AppDelegate *_appDelegate;
+}
+
+@end
+
 @implementation PMNotable
 
 #pragma mark - Singleton
@@ -28,6 +35,16 @@
     });
     
     return sharedInstance;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        _appDelegate = [UIApplication sharedApplication].delegate;
+    }
+    return self;
 }
 
 #pragma mark - Update
@@ -46,25 +63,43 @@
     }];
 }
 
+#pragma mark - Notifications
+
+- (PMNotableNotification *)notificationWithID:(NSString *)notificationID
+{
+    for (PMNotableNotification *notification in _notifications)
+    {
+        if ([notification.notificationID isEqualToString:notificationID])
+        {
+            return notification;
+        }
+    }
+    
+    return nil;
+}
+
 - (void)parseControlJSON:(id)controlJSON
 {
+    _notifications = nil;
+    _notifications = [NSMutableArray new];
+    
     for (NSString *key in [controlJSON allKeys])
     {
         PMNotableNotification *notification = [PMNotableNotification new];
         notification.notificationID = key;
         [notification parseJSONObject:[controlJSON objectForKey:key]];
+        [_notifications addObject:notification];
         
         if ([notification conditionsSatisfied])
         {
-            PMNotableNotificationViewDefinition *viewDefinition = [notification viewDefinitionForEntry];
+            PMNotableNotificationViewDefinition *viewDefinition = [notification viewDefinitionWithID:notification.entry];
             
             if (viewDefinition)
             {
                 NSLog(@"showing '%@'", notification.entry);
-                AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-                
                 PMNotableNotificationView *view = [[PMNotableNotificationView alloc] initWithViewDefinition:viewDefinition];
-                [appDelegate.window addSubview:view];
+                view.delegate = self;
+                [_appDelegate.window addSubview:view];
                 
                 break;
             }
@@ -73,6 +108,34 @@
         {
             NSLog(@"not showing '%@'", notification.notificationID);
         }
+    }
+}
+
+#pragma mark - PMNotableNotificationViewDelegate
+
+- (void)notificationViewShouldDismiss:(PMNotableNotificationView *)view
+{
+    [view hideAnimated:YES completionBlock:^
+    {
+        [view removeFromSuperview];
+    }];
+}
+
+- (void)notificationView:(PMNotableNotificationView *)view shouldDisplayViewWithID:(NSString *)viewID
+{
+    PMNotableNotification *notification = [self notificationWithID:view.viewDefinition.notificationID];
+    PMNotableNotificationViewDefinition *viewDefinition = [notification viewDefinitionWithID:viewID];
+    
+    PMNotableNotificationView *newView = [[PMNotableNotificationView alloc] initWithViewDefinition:viewDefinition];
+    newView.delegate = self;
+    [_appDelegate.window addSubview:newView];
+}
+
+- (void)notificationView:(PMNotableNotificationView *)view shouldOpenURL:(NSURL *)url
+{
+    if ([[UIApplication sharedApplication] canOpenURL:url])
+    {
+        [[UIApplication sharedApplication] openURL:url];
     }
 }
 

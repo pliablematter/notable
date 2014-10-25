@@ -11,13 +11,25 @@
 
 #import "PMNotableNotificationViewDefinition.h"
 
+@protocol PMNotableNotificationViewDelegate;
+
 @interface PMNotableNotificationView : UIView <UIWebViewDelegate>
 
+@property (weak, nonatomic) id<PMNotableNotificationViewDelegate> delegate;
 @property (strong, nonatomic) PMNotableNotificationViewDefinition *viewDefinition;
 
 - (instancetype)initWithViewDefinition:(PMNotableNotificationViewDefinition *)viewDefinition;
 
-- (void)hideAnimated:(BOOL)animated;
-- (void)showAnimated:(BOOL)animated;
+- (void)hideAnimated:(BOOL)animated completionBlock:(void (^)())completionBlock;
+- (void)showAnimated:(BOOL)animated completionBlock:(void (^)())completionBlock;
+
+@end
+
+@protocol PMNotableNotificationViewDelegate <NSObject>
+
+@optional
+- (void)notificationViewShouldDismiss:(PMNotableNotificationView *)view;
+- (void)notificationView:(PMNotableNotificationView *)view shouldDisplayViewWithID:(NSString *)viewID;
+- (void)notificationView:(PMNotableNotificationView *)view shouldOpenURL:(NSURL *)url;
 
 @end

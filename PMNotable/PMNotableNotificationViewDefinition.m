@@ -17,6 +17,7 @@
     self = [super init];
     if (self)
     {
+        _notificationID = @"";
         _viewID = @"";
         _file = @"";
         _height = [UIScreen mainScreen].bounds.size.height;
@@ -58,6 +59,7 @@
 
 - (void)dealloc
 {
+    _notificationID = nil;
     _viewID = nil;
     _file = nil;
 }
