@@ -10,4 +10,10 @@
 
 @interface PMNotable : NSObject
 
+// Singleton
++ (instancetype)sharedInstance;
+
+// Update
+- (void)updateWithControlFile:(NSString *)controlFile;
+
 @end

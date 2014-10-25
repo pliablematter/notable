@@ -14,6 +14,7 @@
 		5B3DB37319FB8A080076FFD2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3DB37219FB8A080076FFD2 /* Images.xcassets */; };
 		5B3DB37619FB8A080076FFD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3DB37419FB8A080076FFD2 /* LaunchScreen.xib */; };
 		5B3DB38219FB8A080076FFD2 /* PMNotableDevelopmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DB38119FB8A080076FFD2 /* PMNotableDevelopmentTests.m */; };
+		5B3DB38E19FB8A850076FFD2 /* PMNotable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DB38D19FB8A850076FFD2 /* PMNotable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		5B3DB37B19FB8A080076FFD2 /* PMNotableDevelopmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMNotableDevelopmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3DB38019FB8A080076FFD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B3DB38119FB8A080076FFD2 /* PMNotableDevelopmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMNotableDevelopmentTests.m; sourceTree = "<group>"; };
+		5B3DB38C19FB8A850076FFD2 /* PMNotable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotable.h; sourceTree = "<group>"; };
+		5B3DB38D19FB8A850076FFD2 /* PMNotable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		5B3DB35919FB8A080076FFD2 = {
 			isa = PBXGroup;
 			children = (
+				5B3DB38B19FB8A850076FFD2 /* PMNotable */,
 				5B3DB36419FB8A080076FFD2 /* PMNotableDevelopment */,
 				5B3DB37E19FB8A080076FFD2 /* PMNotableDevelopmentTests */,
 				5B3DB36319FB8A080076FFD2 /* Products */,
@@ -117,6 +121,16 @@
 				5B3DB38019FB8A080076FFD2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B3DB38B19FB8A850076FFD2 /* PMNotable */ = {
+			isa = PBXGroup;
+			children = (
+				5B3DB38C19FB8A850076FFD2 /* PMNotable.h */,
+				5B3DB38D19FB8A850076FFD2 /* PMNotable.m */,
+			);
+			name = PMNotable;
+			path = ../PMNotable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3DB38E19FB8A850076FFD2 /* PMNotable.m in Sources */,
 				5B3DB36E19FB8A080076FFD2 /* ViewController.m in Sources */,
 				5B3DB36B19FB8A080076FFD2 /* AppDelegate.m in Sources */,
 				5B3DB36819FB8A080076FFD2 /* main.m in Sources */,
@@ -297,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -332,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -344,6 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PMNotableDevelopment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PMNotableDevelopment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

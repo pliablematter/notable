@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "PMNotable.h"
+
 @interface AppDelegate ()
 
 @end
@@ -36,6 +38,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[PMNotable sharedInstance] updateWithControlFile:@"http://s3.amazonaws.com/notable/control.json"];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
