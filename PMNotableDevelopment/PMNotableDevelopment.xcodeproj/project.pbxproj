@@ -15,6 +15,7 @@
 		5B3DB37619FB8A080076FFD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3DB37419FB8A080076FFD2 /* LaunchScreen.xib */; };
 		5B3DB38219FB8A080076FFD2 /* PMNotableDevelopmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DB38119FB8A080076FFD2 /* PMNotableDevelopmentTests.m */; };
 		5B3DB38E19FB8A850076FFD2 /* PMNotable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DB38D19FB8A850076FFD2 /* PMNotable.m */; };
+		5B4E67F819FBB09000931A83 /* PMNotableDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E67F719FBB09000931A83 /* PMNotableDownloader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		5B3DB38119FB8A080076FFD2 /* PMNotableDevelopmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMNotableDevelopmentTests.m; sourceTree = "<group>"; };
 		5B3DB38C19FB8A850076FFD2 /* PMNotable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotable.h; sourceTree = "<group>"; };
 		5B3DB38D19FB8A850076FFD2 /* PMNotable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotable.m; sourceTree = "<group>"; };
+		5B4E67F619FBB09000931A83 /* PMNotableDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableDownloader.h; sourceTree = "<group>"; };
+		5B4E67F719FBB09000931A83 /* PMNotableDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableDownloader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 			children = (
 				5B3DB38C19FB8A850076FFD2 /* PMNotable.h */,
 				5B3DB38D19FB8A850076FFD2 /* PMNotable.m */,
+				5B4E67F619FBB09000931A83 /* PMNotableDownloader.h */,
+				5B4E67F719FBB09000931A83 /* PMNotableDownloader.m */,
 			);
 			name = PMNotable;
 			path = ../PMNotable;
@@ -233,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4E67F819FBB09000931A83 /* PMNotableDownloader.m in Sources */,
 				5B3DB38E19FB8A850076FFD2 /* PMNotable.m in Sources */,
 				5B3DB36E19FB8A080076FFD2 /* ViewController.m in Sources */,
 				5B3DB36B19FB8A080076FFD2 /* AppDelegate.m in Sources */,
@@ -429,6 +435,7 @@
 				5B3DB38719FB8A080076FFD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B3DB38819FB8A080076FFD2 /* Build configuration list for PBXNativeTarget "PMNotableDevelopmentTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +444,7 @@
 				5B3DB38A19FB8A080076FFD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

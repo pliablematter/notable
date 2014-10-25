@@ -8,6 +8,8 @@
 
 #import "PMNotable.h"
 
+#import "PMNotableDownloader.h"
+
 @implementation PMNotable
 
 #pragma mark - Singleton
@@ -29,7 +31,16 @@
 
 - (void)updateWithControlFile:(NSString *)controlFile
 {
-    NSLog(@"%@", controlFile);
+    PMNotableDownloader *downloader = [PMNotableDownloader new];
+    
+    [downloader requestControlFile:controlFile successBlock:^(id controlJSON)
+    {
+        NSLog(@"%@", controlJSON);
+    }
+    errorBlock:^(NSError *error)
+    {
+        NSLog(@"%@", error);
+    }];
 }
 
 @end
