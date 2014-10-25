@@ -113,6 +113,17 @@
     }
 }
 
+- (void)updateUserDefaults
+{
+    NSString *neverDisplayedKey = [NSString stringWithFormat:@"%@-%@-%d", PM_CONDITION_KEY, _notificationID, PMConditionTypeNeverDisplayed];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:neverDisplayedKey];
+    
+    NSString *lastDisplayedMinimumLaunchesKey = [NSString stringWithFormat:@"%@-%@-%d", PM_CONDITION_KEY, _notificationID, PMConditionTypeLastDisplayedMinimumLaunches];
+    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:lastDisplayedMinimumLaunchesKey];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (PMNotableNotificationViewDefinition *)viewDefinitionWithID:(NSString *)viewID
 {
     for (PMNotableNotificationViewDefinition *viewDefinition in _viewDefinitions)

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define PM_CONDITION_KEY @"kPMConditionKey"
+
 typedef NS_ENUM(NSInteger, PMConditionType)
 {
     PMConditionTypeNone,

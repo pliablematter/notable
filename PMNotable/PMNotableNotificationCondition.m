@@ -10,8 +10,6 @@
 
 #import "Reachability.h"
 
-#define PM_CONDITION_KEY @"kPMConditionKey"
-
 @implementation PMNotableNotificationCondition
 
 #pragma mark - Init
@@ -33,6 +31,7 @@
 
 - (BOOL)satisfied
 {
+    NSString *defaultsKey = [NSString stringWithFormat:@"%@-%@-%d", PM_CONDITION_KEY, _notificationID, _type];
     BOOL satisfied = NO;
     
     switch (_type)
@@ -45,16 +44,20 @@
             break;
         case PMConditionTypeNeverDisplayed:
         {
-            NSString *defaultsKey = [NSString stringWithFormat:@"%@-%@-%d", PM_CONDITION_KEY, _notificationID, _type];
-            satisfied = [[NSUserDefaults standardUserDefaults] boolForKey:defaultsKey] != [_value boolValue];
+            satisfied = [[NSUserDefaults standardUserDefaults] boolForKey:defaultsKey] != [_value boolValue]; // Reversed logic because of negation in type
         }
             break;
-            
+        case PMConditionTypeLastDisplayedMinimumLaunches:
+        {
+            NSInteger lastDisplayedMinimumLaunches = [[NSUserDefaults standardUserDefaults] integerForKey:defaultsKey];
+            satisfied = lastDisplayedMinimumLaunches > [_value integerValue];
+        }
+            break;
         default:
             break;
     }
     
-    NSLog(@"%@: %@ -> %@", _key, _value, satisfied ? @"YES": @"NO");
+    NSLog(@"condition - %@: %@ -> %@", _key, _value, satisfied ? @"YES": @"NO");
     
     return satisfied;
 }

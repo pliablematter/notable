@@ -90,13 +90,21 @@
         [notification parseJSONObject:[controlJSON objectForKey:key]];
         [_notifications addObject:notification];
         
+        // Update launches count for each notification to track number of launches after displaying notification
+        NSString *lastDisplayedMinimumLaunchesKey = [NSString stringWithFormat:@"%@-%@-%d", PM_CONDITION_KEY, key, PMConditionTypeLastDisplayedMinimumLaunches];
+        NSInteger lastDisplayedMinimumLaunches = [[NSUserDefaults standardUserDefaults] integerForKey:lastDisplayedMinimumLaunchesKey];
+        [[NSUserDefaults standardUserDefaults] setInteger:++lastDisplayedMinimumLaunches forKey:lastDisplayedMinimumLaunchesKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         if ([notification conditionsSatisfied])
         {
             PMNotableNotificationViewDefinition *viewDefinition = [notification viewDefinitionWithID:notification.entry];
             
             if (viewDefinition)
             {
-                NSLog(@"showing '%@'", notification.entry);
+                NSLog(@"showing '%@'", notification.notificationID);
+                [notification updateUserDefaults];
+                
                 PMNotableNotificationView *view = [[PMNotableNotificationView alloc] initWithViewDefinition:viewDefinition];
                 view.delegate = self;
                 [_appDelegate.window addSubview:view];
