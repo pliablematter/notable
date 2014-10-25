@@ -30,27 +30,23 @@
 
 - (BOOL)conditionsSatisfied
 {
-    BOOL allConditions = YES;
     for (PMNotableNotificationCondition *condition in _allConditions)
     {
         if (![condition satisfied])
         {
-            allConditions = NO;
-            break;
+            return NO;
         }
     }
     
-    BOOL anyConditions = NO;
     for (PMNotableNotificationCondition *condition in _anyConditions)
     {
         if ([condition satisfied])
         {
-            anyConditions = YES;
-            break;
+            return YES;
         }
     }
     
-    return allConditions && anyConditions;
+    return NO;
 }
 
 - (void)parseJSONObject:(id)JSONObject
