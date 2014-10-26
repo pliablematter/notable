@@ -114,6 +114,9 @@
     NSString *neverDisplayedKey = [NSString stringWithFormat:@"%@-%@-%d", PM_CONDITION_KEY, _notificationID, PMConditionTypeNeverDisplayed];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:neverDisplayedKey];
     
+    NSString *lastDisplayedMinimumSecondsKey = [NSString stringWithFormat:@"%@-%@-%d", PM_CONDITION_KEY, _notificationID, PMConditionTypeLastDisplayedMinimumSeconds];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:lastDisplayedMinimumSecondsKey];
+    
     NSString *lastDisplayedMinimumLaunchesKey = [NSString stringWithFormat:@"%@-%@-%d", PM_CONDITION_KEY, _notificationID, PMConditionTypeLastDisplayedMinimumLaunches];
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:lastDisplayedMinimumLaunchesKey];
     

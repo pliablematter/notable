@@ -47,6 +47,13 @@
             satisfied = [[NSUserDefaults standardUserDefaults] boolForKey:defaultsKey] != [_value boolValue]; // Reversed logic because of negation in type
         }
             break;
+        case PMConditionTypeLastDisplayedMinimumSeconds:
+        {
+            NSDate *lastDisplayedDate = [[NSUserDefaults standardUserDefaults] objectForKey:defaultsKey];
+            NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:lastDisplayedDate];
+            satisfied = (NSInteger)timeInterval > [_value integerValue];
+        }
+            break;
         case PMConditionTypeLastDisplayedMinimumLaunches:
         {
             NSInteger lastDisplayedMinimumLaunches = [[NSUserDefaults standardUserDefaults] integerForKey:defaultsKey];
@@ -74,6 +81,10 @@
     else if ([_key isEqualToString:@"neverDisplayed"])
     {
         _type = PMConditionTypeNeverDisplayed;
+    }
+    else if ([_key isEqualToString:@"lastDisplayedMinimumSeconds"])
+    {
+        _type = PMConditionTypeLastDisplayedMinimumSeconds;
     }
     else if ([_key isEqualToString:@"lastDisplayedMinimumLaunches"])
     {

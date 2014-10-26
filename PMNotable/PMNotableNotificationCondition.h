@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, PMConditionType)
     PMConditionTypeNone,
     PMConditionTypeOnWifi,
     PMConditionTypeNeverDisplayed,
+    PMConditionTypeLastDisplayedMinimumSeconds,
     PMConditionTypeLastDisplayedMinimumLaunches
 };
 
