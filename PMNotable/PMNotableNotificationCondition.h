@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define PM_CONDITION_KEY @"kPMConditionKey"
 
@@ -17,7 +18,9 @@ typedef NS_ENUM(NSInteger, PMConditionType)
     PMConditionTypeNeverDisplayed,
     PMConditionTypeLastDisplayedMinimumSeconds,
     PMConditionTypeLastDisplayedMinimumLaunches,
-    PMConditionTypeFlagNotSet
+    PMConditionTypeFlagNotSet,
+    PMConditionTypeiOSVersionLessThan,
+    PMConditionTypeAppVersionLessThan
 };
 
 @interface PMNotableNotificationCondition : NSObject

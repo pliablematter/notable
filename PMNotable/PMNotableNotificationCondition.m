@@ -10,6 +10,10 @@
 
 #import "Reachability.h"
 
+// Version macros
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define APP_VERSION_LESS_THAN(v)    ([[[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
 @implementation PMNotableNotificationCondition
 
 #pragma mark - Init
@@ -66,6 +70,16 @@
             satisfied = ![[NSUserDefaults standardUserDefaults] boolForKey:defaultsKey];
         }
             break;
+        case PMConditionTypeiOSVersionLessThan:
+        {
+            satisfied = SYSTEM_VERSION_LESS_THAN(_value);
+        }
+            break;
+        case PMConditionTypeAppVersionLessThan:
+        {
+            satisfied = APP_VERSION_LESS_THAN(_value);
+        }
+            break;
         default:
             break;
     }
@@ -99,6 +113,14 @@
     else if ([_key isEqualToString:@"flagNotSet"])
     {
         _type = PMConditionTypeFlagNotSet;
+    }
+    else if ([_key isEqualToString:@"iOSVersionLessThan"])
+    {
+        _type = PMConditionTypeiOSVersionLessThan;
+    }
+    else if ([_key isEqualToString:@"appVersionLessThan"])
+    {
+        _type = PMConditionTypeAppVersionLessThan;
     }
     else
     {
