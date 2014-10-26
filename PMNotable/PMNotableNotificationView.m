@@ -106,6 +106,14 @@
         }
     };
     
+    context[@"setFlag"] = ^(NSString *flag, NSString *value)
+    {
+        if (_delegate && [_delegate respondsToSelector:@selector(notificationView:shouldSetFlag:value:)])
+        {
+            [_delegate notificationView:self shouldSetFlag:flag value:value];
+        }
+    };
+    
     context[@"openUrl"] = ^(NSString *urlString)
     {
         if (_delegate && [_delegate respondsToSelector:@selector(notificationView:shouldOpenURL:)])

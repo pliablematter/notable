@@ -16,7 +16,8 @@ typedef NS_ENUM(NSInteger, PMConditionType)
     PMConditionTypeOnWifi,
     PMConditionTypeNeverDisplayed,
     PMConditionTypeLastDisplayedMinimumSeconds,
-    PMConditionTypeLastDisplayedMinimumLaunches
+    PMConditionTypeLastDisplayedMinimumLaunches,
+    PMConditionTypeFlagNotSet
 };
 
 @interface PMNotableNotificationCondition : NSObject

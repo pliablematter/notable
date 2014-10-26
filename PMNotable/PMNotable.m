@@ -139,6 +139,15 @@
     [_appDelegate.window addSubview:newView];
 }
 
+- (void)notificationView:(PMNotableNotificationView *)view shouldSetFlag:(NSString *)flag value:(NSString *)value
+{
+    PMNotableNotification *notification = [self notificationWithID:view.viewDefinition.notificationID];
+    
+    NSString *flagNotSetKey = [NSString stringWithFormat:@"%@-%@-%d-%@", PM_CONDITION_KEY, notification.notificationID, PMConditionTypeFlagNotSet, flag];
+    [[NSUserDefaults standardUserDefaults] setBool:[value boolValue] forKey:flagNotSetKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void)notificationView:(PMNotableNotificationView *)view shouldOpenURL:(NSURL *)url
 {
     if ([[UIApplication sharedApplication] canOpenURL:url])

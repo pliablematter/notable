@@ -60,6 +60,12 @@
             satisfied = lastDisplayedMinimumLaunches > [_value integerValue];
         }
             break;
+        case PMConditionTypeFlagNotSet:
+        {
+            defaultsKey = [NSString stringWithFormat:@"%@-%@-%d-%@", PM_CONDITION_KEY, _notificationID, _type, _value];
+            satisfied = ![[NSUserDefaults standardUserDefaults] boolForKey:defaultsKey];
+        }
+            break;
         default:
             break;
     }
@@ -89,6 +95,10 @@
     else if ([_key isEqualToString:@"lastDisplayedMinimumLaunches"])
     {
         _type = PMConditionTypeLastDisplayedMinimumLaunches;
+    }
+    else if ([_key isEqualToString:@"flagNotSet"])
+    {
+        _type = PMConditionTypeFlagNotSet;
     }
     else
     {

@@ -30,6 +30,7 @@
 @optional
 - (void)notificationViewShouldDismiss:(PMNotableNotificationView *)view;
 - (void)notificationView:(PMNotableNotificationView *)view shouldDisplayViewWithID:(NSString *)viewID;
+- (void)notificationView:(PMNotableNotificationView *)view shouldSetFlag:(NSString *)flag value:(NSString *)value;
 - (void)notificationView:(PMNotableNotificationView *)view shouldOpenURL:(NSURL *)url;
 
 @end
