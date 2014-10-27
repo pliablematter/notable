@@ -33,6 +33,10 @@
         _webView.delegate = self;
         [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.viewDefinition.file]]];
         [self addSubview:_webView];
+        
+        JSContext *context =  [_webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+        [context evaluateScript:[NSString stringWithFormat:@"function width(){return %f;}", self.frame.size.width]];
+        [context evaluateScript:[NSString stringWithFormat:@"function height(){return %f;}", self.frame.size.height]];
     }
     return self;
 }
