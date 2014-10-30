@@ -51,17 +51,17 @@
             satisfied = [[NSUserDefaults standardUserDefaults] boolForKey:defaultsKey] != [_value boolValue]; // Reversed logic because of negation in type
         }
             break;
-        case PMConditionTypeLastDisplayedMinimumSeconds:
+        case PMConditionTypeLastDisplayMinimumSeconds:
         {
-            NSDate *lastDisplayedDate = [[NSUserDefaults standardUserDefaults] objectForKey:defaultsKey];
-            NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:lastDisplayedDate];
+            NSDate *lastDisplayDate = [[NSUserDefaults standardUserDefaults] objectForKey:defaultsKey];
+            NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:lastDisplayDate];
             satisfied = (NSInteger)timeInterval > [_value integerValue];
         }
             break;
-        case PMConditionTypeLastDisplayedMinimumLaunches:
+        case PMConditionTypeLastDisplayMinimumLaunches:
         {
-            NSInteger lastDisplayedMinimumLaunches = [[NSUserDefaults standardUserDefaults] integerForKey:defaultsKey];
-            satisfied = lastDisplayedMinimumLaunches > [_value integerValue];
+            NSInteger lastDisplayMinimumLaunches = [[NSUserDefaults standardUserDefaults] integerForKey:defaultsKey];
+            satisfied = lastDisplayMinimumLaunches > [_value integerValue];
         }
             break;
         case PMConditionTypeFlagNotSet:
@@ -102,13 +102,13 @@
     {
         _type = PMConditionTypeNeverDisplayed;
     }
-    else if ([_key isEqualToString:@"lastDisplayedMinimumSeconds"])
+    else if ([_key isEqualToString:@"lastDisplayMinimumSeconds"])
     {
-        _type = PMConditionTypeLastDisplayedMinimumSeconds;
+        _type = PMConditionTypeLastDisplayMinimumSeconds;
     }
-    else if ([_key isEqualToString:@"lastDisplayedMinimumLaunches"])
+    else if ([_key isEqualToString:@"lastDisplayMinimumLaunches"])
     {
-        _type = PMConditionTypeLastDisplayedMinimumLaunches;
+        _type = PMConditionTypeLastDisplayMinimumLaunches;
     }
     else if ([_key isEqualToString:@"flagNotSet"])
     {
@@ -124,6 +124,7 @@
     }
     else
     {
+        NSLog(@"Warning: Unknown condition '%@' used", key);
         _type = PMConditionTypeNone;
     }
 }

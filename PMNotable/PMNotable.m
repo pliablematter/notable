@@ -83,6 +83,8 @@
     _notifications = nil;
     _notifications = [NSMutableArray new];
     
+    PMNotableNotificationView *view = nil;
+    
     for (NSString *key in [controlJSON allKeys])
     {
         PMNotableNotification *notification = [PMNotableNotification new];
@@ -91,12 +93,12 @@
         [_notifications addObject:notification];
         
         // Update launches count for each notification to track number of launches after displaying notification
-        NSString *lastDisplayedMinimumLaunchesKey = [NSString stringWithFormat:@"%@-%@-%d", PM_CONDITION_KEY, key, PMConditionTypeLastDisplayedMinimumLaunches];
-        NSInteger lastDisplayedMinimumLaunches = [[NSUserDefaults standardUserDefaults] integerForKey:lastDisplayedMinimumLaunchesKey];
-        [[NSUserDefaults standardUserDefaults] setInteger:++lastDisplayedMinimumLaunches forKey:lastDisplayedMinimumLaunchesKey];
+        NSString *lastDisplayMinimumLaunchesKey = [NSString stringWithFormat:@"%@-%@-%d", PM_CONDITION_KEY, key, PMConditionTypeLastDisplayMinimumLaunches];
+        NSInteger lastDisplayMinimumLaunches = [[NSUserDefaults standardUserDefaults] integerForKey:lastDisplayMinimumLaunchesKey];
+        [[NSUserDefaults standardUserDefaults] setInteger:++lastDisplayMinimumLaunches forKey:lastDisplayMinimumLaunchesKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        if ([notification conditionsSatisfied])
+        if ([notification conditionsSatisfied] && !view)
         {
             PMNotableNotificationViewDefinition *viewDefinition = [notification viewDefinitionWithID:notification.entry];
             
@@ -105,17 +107,19 @@
                 NSLog(@"showing '%@'", notification.notificationID);
                 [notification updateUserDefaults];
                 
-                PMNotableNotificationView *view = [[PMNotableNotificationView alloc] initWithViewDefinition:viewDefinition];
+                view = [[PMNotableNotificationView alloc] initWithViewDefinition:viewDefinition];
                 view.delegate = self;
-                [_appDelegate.window addSubview:view];
-                
-                break;
             }
         }
         else
         {
             NSLog(@"not showing '%@'", notification.notificationID);
         }
+    }
+    
+    if (view)
+    {
+        [_appDelegate.window addSubview:view];
     }
 }
 
