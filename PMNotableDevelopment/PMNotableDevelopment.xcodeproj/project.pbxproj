@@ -15,12 +15,12 @@
 		5B3DB37619FB8A080076FFD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3DB37419FB8A080076FFD2 /* LaunchScreen.xib */; };
 		5B3DB38219FB8A080076FFD2 /* PMNotableDevelopmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DB38119FB8A080076FFD2 /* PMNotableDevelopmentTests.m */; };
 		5B3DB38E19FB8A850076FFD2 /* PMNotable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DB38D19FB8A850076FFD2 /* PMNotable.m */; };
-		5B4E67F819FBB09000931A83 /* PMNotableDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E67F719FBB09000931A83 /* PMNotableDownloader.m */; };
-		5B4E67FB19FBB99C00931A83 /* PMNotableNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E67FA19FBB99C00931A83 /* PMNotableNotification.m */; };
-		5B4E67FE19FBC01500931A83 /* PMNotableNotificationCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E67FD19FBC01500931A83 /* PMNotableNotificationCondition.m */; };
-		5B4E680119FBC6AB00931A83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E680019FBC6AB00931A83 /* Reachability.m */; };
-		5B4E680419FBFF8D00931A83 /* PMNotableNotificationViewDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E680319FBFF8D00931A83 /* PMNotableNotificationViewDefinition.m */; };
-		5B4E680719FC0F0800931A83 /* PMNotableNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E680619FC0F0800931A83 /* PMNotableNotificationView.m */; };
+		5BE1F9F51A039B3C00061248 /* PMNotableDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1F9E81A039B3C00061248 /* PMNotableDownloader.m */; };
+		5BE1F9F61A039B3C00061248 /* PMNotableNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1F9EB1A039B3C00061248 /* PMNotableNotification.m */; };
+		5BE1F9F71A039B3C00061248 /* PMNotableNotificationCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1F9ED1A039B3C00061248 /* PMNotableNotificationCondition.m */; };
+		5BE1F9F81A039B3C00061248 /* PMNotableNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1F9EF1A039B3C00061248 /* PMNotableNotificationView.m */; };
+		5BE1F9F91A039B3C00061248 /* PMNotableNotificationViewDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1F9F11A039B3C00061248 /* PMNotableNotificationViewDefinition.m */; };
+		5BE1F9FA1A039B3C00061248 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1F9F41A039B3C00061248 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,18 +49,18 @@
 		5B3DB38119FB8A080076FFD2 /* PMNotableDevelopmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMNotableDevelopmentTests.m; sourceTree = "<group>"; };
 		5B3DB38C19FB8A850076FFD2 /* PMNotable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotable.h; sourceTree = "<group>"; };
 		5B3DB38D19FB8A850076FFD2 /* PMNotable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotable.m; sourceTree = "<group>"; };
-		5B4E67F619FBB09000931A83 /* PMNotableDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableDownloader.h; sourceTree = "<group>"; };
-		5B4E67F719FBB09000931A83 /* PMNotableDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableDownloader.m; sourceTree = "<group>"; };
-		5B4E67F919FBB99C00931A83 /* PMNotableNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotification.h; sourceTree = "<group>"; };
-		5B4E67FA19FBB99C00931A83 /* PMNotableNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotification.m; sourceTree = "<group>"; };
-		5B4E67FC19FBC01500931A83 /* PMNotableNotificationCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotificationCondition.h; sourceTree = "<group>"; };
-		5B4E67FD19FBC01500931A83 /* PMNotableNotificationCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotificationCondition.m; sourceTree = "<group>"; };
-		5B4E67FF19FBC6AB00931A83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		5B4E680019FBC6AB00931A83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		5B4E680219FBFF8D00931A83 /* PMNotableNotificationViewDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotificationViewDefinition.h; sourceTree = "<group>"; };
-		5B4E680319FBFF8D00931A83 /* PMNotableNotificationViewDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotificationViewDefinition.m; sourceTree = "<group>"; };
-		5B4E680519FC0F0800931A83 /* PMNotableNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotificationView.h; sourceTree = "<group>"; };
-		5B4E680619FC0F0800931A83 /* PMNotableNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotificationView.m; sourceTree = "<group>"; };
+		5BE1F9E71A039B3C00061248 /* PMNotableDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableDownloader.h; sourceTree = "<group>"; };
+		5BE1F9E81A039B3C00061248 /* PMNotableDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableDownloader.m; sourceTree = "<group>"; };
+		5BE1F9EA1A039B3C00061248 /* PMNotableNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotification.h; sourceTree = "<group>"; };
+		5BE1F9EB1A039B3C00061248 /* PMNotableNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotification.m; sourceTree = "<group>"; };
+		5BE1F9EC1A039B3C00061248 /* PMNotableNotificationCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotificationCondition.h; sourceTree = "<group>"; };
+		5BE1F9ED1A039B3C00061248 /* PMNotableNotificationCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotificationCondition.m; sourceTree = "<group>"; };
+		5BE1F9EE1A039B3C00061248 /* PMNotableNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotificationView.h; sourceTree = "<group>"; };
+		5BE1F9EF1A039B3C00061248 /* PMNotableNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotificationView.m; sourceTree = "<group>"; };
+		5BE1F9F01A039B3C00061248 /* PMNotableNotificationViewDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNotableNotificationViewDefinition.h; sourceTree = "<group>"; };
+		5BE1F9F11A039B3C00061248 /* PMNotableNotificationViewDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNotableNotificationViewDefinition.m; sourceTree = "<group>"; };
+		5BE1F9F31A039B3C00061248 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		5BE1F9F41A039B3C00061248 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,23 +144,47 @@
 		5B3DB38B19FB8A850076FFD2 /* PMNotable */ = {
 			isa = PBXGroup;
 			children = (
+				5BE1F9E61A039B3C00061248 /* Downloader */,
+				5BE1F9E91A039B3C00061248 /* Notification */,
+				5BE1F9F21A039B3C00061248 /* Reachability */,
 				5B3DB38C19FB8A850076FFD2 /* PMNotable.h */,
 				5B3DB38D19FB8A850076FFD2 /* PMNotable.m */,
-				5B4E67F619FBB09000931A83 /* PMNotableDownloader.h */,
-				5B4E67F719FBB09000931A83 /* PMNotableDownloader.m */,
-				5B4E67F919FBB99C00931A83 /* PMNotableNotification.h */,
-				5B4E67FA19FBB99C00931A83 /* PMNotableNotification.m */,
-				5B4E67FC19FBC01500931A83 /* PMNotableNotificationCondition.h */,
-				5B4E67FD19FBC01500931A83 /* PMNotableNotificationCondition.m */,
-				5B4E680519FC0F0800931A83 /* PMNotableNotificationView.h */,
-				5B4E680619FC0F0800931A83 /* PMNotableNotificationView.m */,
-				5B4E680219FBFF8D00931A83 /* PMNotableNotificationViewDefinition.h */,
-				5B4E680319FBFF8D00931A83 /* PMNotableNotificationViewDefinition.m */,
-				5B4E67FF19FBC6AB00931A83 /* Reachability.h */,
-				5B4E680019FBC6AB00931A83 /* Reachability.m */,
 			);
 			name = PMNotable;
 			path = ../PMNotable;
+			sourceTree = "<group>";
+		};
+		5BE1F9E61A039B3C00061248 /* Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				5BE1F9E71A039B3C00061248 /* PMNotableDownloader.h */,
+				5BE1F9E81A039B3C00061248 /* PMNotableDownloader.m */,
+			);
+			path = Downloader;
+			sourceTree = "<group>";
+		};
+		5BE1F9E91A039B3C00061248 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				5BE1F9EA1A039B3C00061248 /* PMNotableNotification.h */,
+				5BE1F9EB1A039B3C00061248 /* PMNotableNotification.m */,
+				5BE1F9EC1A039B3C00061248 /* PMNotableNotificationCondition.h */,
+				5BE1F9ED1A039B3C00061248 /* PMNotableNotificationCondition.m */,
+				5BE1F9EE1A039B3C00061248 /* PMNotableNotificationView.h */,
+				5BE1F9EF1A039B3C00061248 /* PMNotableNotificationView.m */,
+				5BE1F9F01A039B3C00061248 /* PMNotableNotificationViewDefinition.h */,
+				5BE1F9F11A039B3C00061248 /* PMNotableNotificationViewDefinition.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		5BE1F9F21A039B3C00061248 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				5BE1F9F31A039B3C00061248 /* Reachability.h */,
+				5BE1F9F41A039B3C00061248 /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,15 +287,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B4E680419FBFF8D00931A83 /* PMNotableNotificationViewDefinition.m in Sources */,
-				5B4E67F819FBB09000931A83 /* PMNotableDownloader.m in Sources */,
-				5B4E67FB19FBB99C00931A83 /* PMNotableNotification.m in Sources */,
-				5B4E680119FBC6AB00931A83 /* Reachability.m in Sources */,
-				5B4E680719FC0F0800931A83 /* PMNotableNotificationView.m in Sources */,
+				5BE1F9F51A039B3C00061248 /* PMNotableDownloader.m in Sources */,
+				5BE1F9F61A039B3C00061248 /* PMNotableNotification.m in Sources */,
+				5BE1F9F91A039B3C00061248 /* PMNotableNotificationViewDefinition.m in Sources */,
+				5BE1F9F81A039B3C00061248 /* PMNotableNotificationView.m in Sources */,
+				5BE1F9FA1A039B3C00061248 /* Reachability.m in Sources */,
 				5B3DB38E19FB8A850076FFD2 /* PMNotable.m in Sources */,
 				5B3DB36E19FB8A080076FFD2 /* ViewController.m in Sources */,
 				5B3DB36B19FB8A080076FFD2 /* AppDelegate.m in Sources */,
-				5B4E67FE19FBC01500931A83 /* PMNotableNotificationCondition.m in Sources */,
+				5BE1F9F71A039B3C00061248 /* PMNotableNotificationCondition.m in Sources */,
 				5B3DB36819FB8A080076FFD2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
