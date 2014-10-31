@@ -8,15 +8,11 @@
 
 #import "PMNotable.h"
 
-#import "AppDelegate.h"
 #import "PMNotableDownloader.h"
 #import "PMNotableNotification.h"
 #import "PMNotableNotificationView.h"
 
 @interface PMNotable () <PMNotableNotificationViewDelegate>
-{
-    AppDelegate *_appDelegate;
-}
 
 @end
 
@@ -35,16 +31,6 @@
     });
     
     return sharedInstance;
-}
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self)
-    {
-        _appDelegate = [UIApplication sharedApplication].delegate;
-    }
-    return self;
 }
 
 #pragma mark - Update
@@ -119,7 +105,7 @@
     
     if (view)
     {
-        [_appDelegate.window addSubview:view];
+        [[UIApplication sharedApplication].keyWindow addSubview:view];
     }
 }
 
@@ -140,7 +126,7 @@
     
     PMNotableNotificationView *newView = [[PMNotableNotificationView alloc] initWithViewDefinition:viewDefinition];
     newView.delegate = self;
-    [_appDelegate.window addSubview:newView];
+    [[UIApplication sharedApplication].keyWindow addSubview:newView];
 }
 
 - (void)notificationView:(PMNotableNotificationView *)view shouldSetFlag:(NSString *)flag value:(NSString *)value
