@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Notable_Example' do
+  pod 'Notable', :path => '../'
+
+  target 'Notable_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

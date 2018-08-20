@@ -1,0 +1,6 @@
+framework module Notable {
+  umbrella header "Notable-umbrella.h"
+
+  export *
+  module * { export * }
+}
